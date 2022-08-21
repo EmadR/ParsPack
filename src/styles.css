@@ -1,0 +1,36 @@
+@import "~ng-zorro-antd/ng-zorro-antd.min.css";
+
+:root {
+  --text-theme: #55768B;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(./assets/fonts/roboto/roboto-light.woff2) format("woff2"), url(./assets/fonts/roboto/roboto-light.woff) format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(./assets/fonts/roboto/roboto-regular.woff2) format("woff2"), url(./assets/fonts/roboto/roboto-regular.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(./assets/fonts/roboto/roboto-medium.woff2) format("woff2"), url(./assets/fonts/roboto/roboto-medium.woff) format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal
+}
+
+
+
+* {
+  font-family: Roboto, sans-serif;
+  color: var(--text-theme) !important;
+}

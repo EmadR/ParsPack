@@ -1,0 +1,88 @@
+<div class="container-fluid content">
+
+  <!--header-->
+  <div class="row">
+    <div class="col-12">
+      <div class="d-flex justify-content-between align-self-center header">
+        <h6>سرویس های من</h6>
+        <a class="text-dark" href="javascript:;"><i nz-icon nzType="ellipsis" nzTheme="outline"></i></a>
+      </div>
+    </div>
+  </div>
+  <!--End header-->
+
+  <!--search-->
+  <div class="row">
+    <div class="col-12">
+      <div class="d-flex justify-content-between search">
+        <input class="form-control m-auto search-input" type="text" placeholder="سرویس مورد نظر خود را جستجو کنید ..."
+               [(ngModel)]="searchText" (keyup)="search()">
+      </div>
+    </div>
+  </div>
+  <!--End search-->
+
+  <!--Items-->
+  <div class="row">
+    <div class="col-12">
+      <div class="items">
+        <nz-tabset>
+          <nz-tab *ngFor="let tab of tabs" [nzTitle]="services">
+            <ng-template #services>
+              <div (click)="selectTab(tab.type)">
+                <div class="d-flex flex-column justify-content-center services">
+                  <img src="{{tab.icon}}" alt="{{tab.icon}}">
+                  <p class="text-center mb-0">{{ tab.name }}</p>
+                  <span class="count">{{countOfServices(tab.type)}} سرویس </span>
+                </div>
+              </div>
+            </ng-template>
+          </nz-tab>
+        </nz-tabset>
+      </div>
+    </div>
+  </div>
+  <!--End Items-->
+
+  <!--Table-->
+  <nz-table [nzData]="data" [nzScroll]="{ x: '1000px', y: '460px' }">
+    <thead>
+    <tr>
+      <th>نام / مشخصه</th>
+      <th>هزینه</th>
+      <th>تاریخ سررسید</th>
+      <th>عملیات</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let d of data">
+      <td>
+        <ng-container [ngSwitch]="d.status">
+          <ng-container *ngSwitchCase="'Cancelled'">
+            <span class="status cancel"></span>
+          </ng-container>
+          <ng-container *ngSwitchCase="'Active'">
+            <span class="status active"></span>
+          </ng-container>
+          <ng-container *ngSwitchCase="'Pending'">
+            <span class="status pending"></span>
+          </ng-container>
+        </ng-container>
+        <img class="icon" src="{{imageUrl}}{{d.type.toLowerCase()}}.png" alt="{{d.type}}">
+        {{ d.name }}
+      </td>
+      <td>{{ d.amount | number: '.0-0' }} تومان (ماهانه) </td>
+      <td>{{ d.nextduedate | shamsi}}</td>
+      <td>
+        <button type="button" class="btn btn-outline-primary"
+           [class.disable]="d.invoiceUrl === null">{{ d.invoiceUrl !== null ? 'مدیریت سرویس' : 'درحال آماده سازی' }}</button>
+
+        <a href="javascript:;">
+          <i nz-icon nzType="more" class="more"></i>
+        </a>
+      </td>
+    </tr>
+    </tbody>
+  </nz-table>
+  <!--End Table-->
+</div>

@@ -1,0 +1,188 @@
+.content {
+  align-items: center;
+  padding: 8px 20px;
+}
+
+/*header*/
+.header {
+  margin: 8px 20px;
+}
+
+.header h6 {
+  font-size: 14px;
+}
+
+/*search*/
+.search {
+  margin: 10px;
+}
+
+.search .search-input {
+  width: 300px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  text-align: center;
+  background: #F2F8FA;
+  color: #84AECD !important;
+}
+
+/*items*/
+::ng-deep .ant-tabs-tab {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 0;
+  font-size: 14px;
+  border: 0;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+::ng-deep .ant-tabs-nav-list {
+  display: flex;
+  flex-grow: 1;
+}
+
+::ng-deep .ant-tabs-ink-bar {
+  background: transparent;
+}
+
+.services .count {
+  text-align: center;
+  margin: 1rem .3rem;
+  width: 74px;
+  height: 25px;
+}
+
+::ng-deep .ant-pagination {
+  display: none;
+}
+
+::ng-deep .ant-tabs > .ant-tabs-nav, .ant-tabs > div > .ant-tabs-nav {
+  height: 174px;
+  margin: 0;
+}
+
+.services p {
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.services img {
+  width: 36.17px;
+  height: 35.59px;
+  display: block;
+  margin: auto;
+  filter: grayscale(.6);
+}
+
+::ng-deep .ant-tabs-tab-active .services img {
+  filter: grayscale(0) !important;
+}
+
+::ng-deep .ant-tabs-tab-active .services p,
+::ng-deep .ant-tabs-tab-active .services .count {
+  color: #248fde !important;
+}
+
+.services .count {
+  background: rgba(242, 248, 250, 0.7);
+  border-radius: 5px;
+  padding: 2px 7px;
+  font-weight: 500;
+}
+
+/*table*/
+::ng-deep .ant-table-thead > tr > th {
+  background: transparent !important;
+}
+
+::ng-deep .ant-table-cell {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+::ng-deep .ant-table-cell:not(:first-child) {
+  text-align: center !important;
+}
+
+::ng-deep .ant-table-cell::before {
+  display: none;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  filter: grayscale(.6);
+  margin-right: 10px;
+}
+
+.status {
+  width: 4px;
+  height: 4px;
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  top: 44%;
+}
+
+.cancel {
+  background: #FE6A93;
+}
+
+.active {
+  background: #44D3A7;
+}
+
+.pending {
+  background: #FFBA1F;
+}
+
+.btn-outline-primary {
+  color: #248FDE !important;
+  background: #FFFFFF;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  width: 125px;
+  height: 30px;
+}
+
+::ng-deep .ant-table-tbody > tr.ant-table-row:hover > td, .ant-table-tbody > tr > td.ant-table-cell-row-hover {
+  background: rgba(36, 143, 222, 0.03);
+}
+
+.more {
+  position: absolute;
+  left: 17px;
+  top: calc(50% - 7px);
+  display: none;
+}
+
+::ng-deep .ant-table-tbody > tr.ant-table-row:hover .more {
+  display: block;
+}
+
+.disable {
+  pointer-events: none;
+  opacity: .6;
+  cursor: auto;
+}
+
+@media only screen and (max-width: 760px) {
+  .services img,
+  .services .count {
+    display: none;
+  }
+
+  ::ng-deep .ant-tabs-ink-bar {
+    background: #248FDE;
+  }
+
+  ::ng-deep .ant-tabs > .ant-tabs-nav, .ant-tabs > div > .ant-tabs-nav {
+    height: 60px;
+  }
+}
